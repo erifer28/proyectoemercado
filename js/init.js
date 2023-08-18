@@ -37,5 +37,36 @@ let getJSONData = function(url){
         result.data = error;
         hideSpinner();
         return result;
-    });
+    });
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("autos").addEventListener("click", function() {
+      localStorage.setItem("catID", 101);
+      window.location = "products.html"
+  });
+  document.getElementById("juguetes").addEventListener("click", function() {
+      localStorage.setItem("catID", 102);
+      window.location = "products.html"
+  });
+  document.getElementById("muebles").addEventListener("click", function() {
+      localStorage.setItem("catID", 103);
+      window.location = "products.html"
+  });
+});
+
+if ((typeof sessionStorage !== 'undefined') || (typeof localStorage !== 'undefined')) {
+  // Comprobar si existe un elemento en sessionStorage o localStorage
+  if (sessionStorage.getItem('username') || localStorage.getItem('username')) {
+    console.log('La sesión existe.');
+  } else {
+    Swal.fire({
+      title:'Si desea continuar, inicie sesión.',
+      icon: 'success'
+    }).then(() => { window.location.href = "login.html";
+  })
+  }
+} else {
+  console.log('El navegador no admite sessionStorage ni localStorage.');
+}
+

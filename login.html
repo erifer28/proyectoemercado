@@ -4,35 +4,35 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
-  
+  <title>Login-eMercado-Todo lo que busques está aquí</title>
+
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: rgb(248, 249, 250);
-    }
-  </style>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-  <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+  <div class="estilo-login">
+    <h2 class="login2">e-mercado <br> <span class="login3">¡tu e_commerce favorito!</span></h2><br>
+    <form action="index.html" method="POST" id="loginForm">
+      <div class="form-inputs">
+        <img class="icono1" src="img/login-usuario.png" alt="">
+      <input type="text" id="username" name="username" placeholder="Usuario" required><br><br>
       </div>
-    </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
-  </footer>
-  <script src="js/login.js"></script>
+      <div class="form-inputs">
+        <img class="icono2" src="img/pngegg (2).png" alt=""> 
+        <input class="contraseña" type="password" id="password" name="password" placeholder="Contraseña" required><br><br>
+      </div>
+      <div class="form-inputs">
+        <input type="checkbox" name="remember" id="remember"> Mantener la sesión iniciada.<br><br>
+        <button class="boton" type="submit" id="login">Iniciar Sesión</button>
+      </div>
+    </form>
+  </div>
+  <script src="js\login.js"></script>
 </body>
 
 </html>
+

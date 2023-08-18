@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Patua+One&family=Style+Script&display=swap');
+
 .jumbotron,
 .card-body,
 .container,
@@ -187,4 +189,12 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.lead {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text-center{
+  font-family:'Caprasimo', cursive;
 }
