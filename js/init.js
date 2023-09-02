@@ -37,7 +37,7 @@ let getJSONData = function(url){
         result.data = error;
         hideSpinner();
         return result;
-    });
+      });
 }
 
 document.addEventListener("DOMContentLoaded", function(){

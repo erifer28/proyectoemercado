@@ -6,6 +6,8 @@ window.onload = function() {
         let username = document.getElementById("username").value;
         let password = document.getElementById("password").value;
         let rememberMe = document.getElementById("remember").checked;
+        
+        localStorage.setItem("username", username);
 
         if (username.length > 30 || password.length > 30) {
             alert("La contraseña no puede tener más de 30 caracteres.");
