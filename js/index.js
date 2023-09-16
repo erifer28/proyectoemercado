@@ -13,4 +13,4 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-document.getElementById("logueduser").innerHTML = localStorage.getItem("username");
+

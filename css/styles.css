@@ -204,3 +204,67 @@ margin-bottom: 2%;
 
 }
 
+#coment{
+  margin-bottom: 4%;
+  margin-top: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: solid 1px gray;
+  padding: 1%;
+  box-shadow: 5px 5px #888;
+}
+
+
+#h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(247, 130, 28);
+  display: grid;
+  margin-right:30px;
+  place-content: center;
+  padding: 1%;
+}
+
+#comentarioInput {
+  border-radius: 10%;
+  border-color: rgb(247, 130, 28);
+  text-align: center; 
+  display: grid;
+  place-content: center;
+}
+
+#floatingTextarea2 {
+  height: 100px;
+  width: 400px;
+  display: grid;
+  place-content: center;
+}
+
+#puntajeInput{
+  display: grid;
+  place-content: center;
+}
+
+#select {
+    width: 50px;
+    margin-left: 280px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5%;
+    opacity: 60%;
+    width: 160px;
+    display: grid;
+    place-content: center;
+}
+
+#button {
+  margin-top: 25px;
+  text-align: center; 
+}
+
+#enviar {
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: rgb(247, 130, 28);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+}
+

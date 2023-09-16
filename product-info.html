@@ -31,17 +31,39 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <div class="nav-link" id="logueduser"></div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="container" id="containerItemsInfoProduct">
     </div>
+    <div id="containerItemsInfo"></div>
+      <div id="comentarioInput">
+        <h1 id="h1">¡Deja tu comentario!</h1>
+        <div class="form-floating" id="textarea">
+         
+          <textarea class="form-control" placeholder="Escribe aquí tu comentario" id="floatingTextarea2" style="height: 100px; width: 90%;"></textarea>
+          <label for="floatingTextarea2">Escribe aquí tu comentario</label>
+        </div>
+        <div id="puntajeInput">
+          <select required id="select" name="puntajes">
+            <option value="" selected disabled>Califica el producto</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div id="button">
+          <button id="enviar" type="submit">Enviar</button>
+        </div>
+      </div>
+
+
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -62,6 +84,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/products.js"></script>
 </body>
 
 </html>
