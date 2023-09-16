@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const catID = localStorage.getItem("catID");
     const URL_PRODUCTS = "https://japceibal.github.io/emercado-api/cats_products/" + catID + ".json";
     let productsCar = document.getElementById("containerItems");
-    let originalData = [];
     let nameCat = "";
 
     //Array que contiene elementos obtenidos de api (fetch)
@@ -19,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-})
+});
+
+  let originalData = [];
 
     function namesCategory(items) {
         let names = document.getElementById("categoryName")
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 `
         }
 
-        document.getElementById("containerItems").innerHTML = htmlContentToAppend;
+        document.getElementById("containerItemsProducts").innerHTML = htmlContentToAppend;
     }
     let botonFiltrarRango = document.getElementById("rangeFilterCount");
     botonFiltrarRango.addEventListener("click", function () {
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const searchInput = document.getElementById("productSearch");
 
+   
     searchInput.addEventListener("input", function () {
         const searchText = searchInput.value.toLowerCase().trim();
 
