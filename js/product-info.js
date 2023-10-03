@@ -10,6 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(data => showComments(data));
 
+        //modo dark del nav
+        let nav = document.getElementById("navIndex")
+        let mode = localStorage.getItem('mode')
+        if(mode === 'dark'){
+            nav.removeAttribute('style')    
+            nav.classList.add('bg-body-tertiary')
+            nav.setAttribute('data-bs-theme', 'dark')
+            
+        }
+        if(mode === 'light'  || !mode){
+            nav.removeAttribute('data-bs-theme')
+            nav.classList.remove('bg-body-tertiary')
+            nav.setAttribute('style','background-color: rgba(255, 192, 74, 0.684);')
+        }
+        if(nav.hasAttribute('data-bs-theme')){
+            botonCambiar.classList.add('active')
+        }
         
 });
 function showProduct(product) {
@@ -30,19 +47,72 @@ function showProduct(product) {
                     <p class="mb-1">${product.soldCount}</p><br><br>
                 <h4>Imágenes ilustrativas</h4> 
         `;
-    product.images.forEach(imagen => {
-        htmlContentToAppend += `
-            <div class="col">
-                    <img src="${imagen}" class="img-thumbnail">
-            </div>
-            `;
-    });
-    htmlContentToAppend += `
+
+        let carrusel = document.getElementById("carrusel");
+        let htmlContentToAppend2 = "";
+        
+            htmlContentToAppend2 += `
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                        <img src="${product.images[0]}" class="d-block w-100" >
                 </div>
-            </main>
+                <div class="carousel-item ">
+                <img src="${product.images[1]}" class="d-block w-100" >
+                </div>
+               <div class="carousel-item ">
+             <img src="${product.images[2]}" class="d-block w-100" >
+            </div>
+            <div class="carousel-item ">
+            <img src="${product.images[3]}" class="d-block w-100" >
+               </div>
+                </div>
+                `;
+
+        htmlContentToAppend += `
+            </div>
+        </div>
         `;
-    document.getElementById("containerItemsInfoProduct").innerHTML = htmlContentToAppend;
-};
+         
+        document.getElementById("containerItemsInfoProduct").innerHTML = htmlContentToAppend;
+        carrusel.innerHTML = htmlContentToAppend2;
+
+    };
+
+function showRelatedProducts() {
+    let idProduct = localStorage.getItem("IdProduct");
+    let catID = localStorage.getItem("catID");
+    let URL = "https://japceibal.github.io/emercado-api/cats_products/" + catID + ".json";
+
+    fetch(URL)
+        .then(res => res.json())
+        .then(data => {
+            let content = "";
+            let productosMostrados = 4;
+            for (let i = 0; i < productosMostrados && i < data.products.length; i++) {
+                let product = data.products[i];
+                if (parseInt(idProduct) !== product.id) {
+                    content += `
+                        <div class="card" style="width: 18rem; cursor: pointer; display: inline-block">
+                            <div onclick="setProductId(${product.id})"">
+                                <img src="${product.image}" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${product.name}</h5>
+                                    </div>
+                            </div>    
+                        </div>               
+                    `;
+                }
+            }
+            document.getElementById("productsRelated").innerHTML = content;
+        })
+        .catch(error => {
+            console.error("Error al cargar los productos relacionados:", error);
+        })
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    showRelatedProducts();
+});
 
 function showComments(itemsArray) {
     let divComent = document.getElementById("containerItemsInfo")

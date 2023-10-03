@@ -40,6 +40,8 @@ let getJSONData = function(url){
       });
 }
 
+const botonCambiar = document.getElementById("cambiarModo"); //const del boton del nav
+
 document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("autos").addEventListener("click", function() {
       localStorage.setItem("catID", 101);
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
       localStorage.setItem("catID", 103);
       window.location = "products.html"
   });
+
 });
 
 if ((typeof sessionStorage !== 'undefined') || (typeof localStorage !== 'undefined')) {
@@ -70,4 +73,30 @@ if ((typeof sessionStorage !== 'undefined') || (typeof localStorage !== 'undefin
   console.log('El navegador no admite sessionStorage ni localStorage.');
 }
 
-document.getElementById("logueduser").innerHTML = localStorage.getItem("username");
+document.getElementById("logueduser").innerHTML = localStorage.getItem("username") || sessionStorage.getItem("username");
+
+ //boton del nav 
+ botonCambiar.addEventListener("click", function (){ 
+  botonCambiar.classList.toggle('active');
+  let nav = document.getElementById("navIndex")
+  let check = nav.toggleAttribute('data-bs-theme')
+
+  if(check){
+      localStorage.setItem('mode', 'dark')
+  }else{
+      localStorage.setItem('mode', 'light')
+  }
+  let mode = localStorage.getItem('mode')
+  if(mode === 'dark'){
+      nav.removeAttribute('style')    
+      nav.classList.add('bg-body-tertiary')
+      nav.setAttribute('data-bs-theme', 'dark')
+      
+  }
+  if(mode === 'light'){
+      nav.removeAttribute('data-bs-theme')
+      nav.classList.remove('bg-body-tertiary')
+      nav.setAttribute('style','background-color: rgba(255, 192, 74, 0.684);')
+  }
+  
+})
