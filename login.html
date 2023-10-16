@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login-eMercado-Todo lo que busques está aquí</title>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -20,16 +20,17 @@
     <form action="index.html" method="POST" id="loginForm">
       <div class="form-inputs">
         <img class="icono1" src="img/login-usuario.png" alt="">
-      <input type="text" id="username" name="username" placeholder="Usuario" required><br><br>
+      <input class="form-control form-control-sm" type="text" id="username" name="username" placeholder="Usuario" required><br><br>
       </div>
       <div class="form-inputs">
         <img class="icono2" src="img/pngegg (2).png" alt=""> 
-        <input class="contraseña" type="password" id="password" name="password" placeholder="Contraseña" required><br><br>
+        <input class="form-control form-control-sm" type="password" id="password" name="password" placeholder="Contraseña" required><br><br>
       </div>
-      <div class="form-inputs">
-        <input type="checkbox" name="remember" id="remember"> Mantener la sesión iniciada.<br><br>
-        <button class="boton" type="submit" id="login">Iniciar Sesión</button>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="remember" id="remember">
+        <label class="form-check-label" for="remember">Mantener la sesión iniciada.</label>
       </div>
+      <div id="estiloBtn"><button class="boton" type="submit" id="login">Iniciar Sesión</button></div>
     </form>
   </div>
   <script src="js\login.js"></script>

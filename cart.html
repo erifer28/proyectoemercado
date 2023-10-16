@@ -8,51 +8,106 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/cart.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/1fcc227a70.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav id="navIndex" class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-             <button id="logueduser" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgba(169, 169, 169, 0.587); border: none;">
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-                <li id="btnCambio">            <button class="cambiarModo" id="cambiarModo">
-                  <span><i class="fa-solid fa-sun" style="color: #ffd333;"></i></span>
-                  <span><i class="fa-solid fa-moon" style="color: #000000;"></i>  </span>
-                 </button></li>
-              </ul>
-            </div>        
-      </div>
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sell.html">Vender</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <button id="logueduser" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgba(169, 169, 169, 0.587); border: none;">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="logueduser">
+                        <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                        <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+                        <li id="btnCambio">
+                            <button class="cambiarModo" id="cambiarModo">
+                                <span><i class="fa-solid fa-sun" style="color: #ffd333;"></i></span>
+                                <span><i class="fa-solid fa-moon" style="color: #000000;"></i></span>
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <h1 class="text-center p-4" >Carrito de compras</h1>
+      <h3>Articulos a comprar</h3>
+    
+        <table id="tablaCarrito" class="table" >
+          <thead>
+            <tr>
+              <th scope="col"  class="col-sm-1"></th>
+              <th scope="col"  class="col-sm-1">Nombre</th>
+              <th scope="col"  class="col-sm-1">Costo</th>
+              <th scope="col"  class="col-sm-1" >Cantidad</th>
+              <th scope="col"  class="col-sm-1" >Subtotal</th>
+              
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="productosCart">
+
+          </tbody>
+        </table>
+
+        <div id="subtotal"></div>
+        
+
       </div>
-    </div>
   </main>
+
+  <div id="formEnvio">
+    <form>
+      <h4 id="h4form"> <strong> Tipo de envío </strong> </h4>
+      <br>
+      <p>
+        <input type="radio" name="env" value="p" required> Premium (2 a 5 días - 15%)
+        <br>
+        <input type="radio" name="env" value="e" required> Express (5 a 8 días - 7%)
+        <br>
+        <input type="radio" name="env" value="es" required> Estándar (12 a 15 días - 5%)
+      </p>
+      <p> <strong>¿Debemos envolver tu compra como un obsequio? </strong> </p>
+     <div class="mb-3 form-check">
+       <input type="checkbox" class="form-check-input" id="exampleCheck1">
+       <p> Si, la compra es un obsequio y será enviada a su destinatario. </p>
+      </div>
+      <div class="mb-3">
+        <h5> Datos de envío</h5>
+        <label for="exampleInputEmail1" class="form-label">Calle:</label>
+        <input type="text" class="form-control" id="exampleInput" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Número</label>
+        <input type="number" class="form-control" id="exampleInput">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Esquina</label>
+        <input type="text" class="form-control" id="exampleInput">
+      </div>
+     
+      <button id="btnEnviar" type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+  </div>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -72,6 +127,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <script src="js/product-info.js"></script>
 </body>
 
 </html>

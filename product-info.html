@@ -8,52 +8,57 @@
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <script src="https://kit.fontawesome.com/1fcc227a70.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
   <nav id="navIndex" class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-             <button id="logueduser" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgba(169, 169, 169, 0.587); border: none;">
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-                <li id="btnCambio">            <button class="cambiarModo" id="cambiarModo">
-                  <span><i class="fa-solid fa-sun" style="color: #ffd333;"></i></span>
-                  <span><i class="fa-solid fa-moon" style="color: #000000;"></i>  </span>
-                 </button></li>
-              </ul>
-            </div>        
-      </div>
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sell.html">Vender</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <button id="logueduser" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgba(169, 169, 169, 0.587); border: none;">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="logueduser">
+                        <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                        <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+                        <li id="btnCambio">
+                            <button class="cambiarModo" id="cambiarModo">
+                                <span><i class="fa-solid fa-sun" style="color: #ffd333;"></i></span>
+                                <span><i class="fa-solid fa-moon" style="color: #000000;"></i></span>
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
   <main>
 
+     <!--Botón de compra-->
+     <div class="form-group text-end m-4">
+      <button id="comprar" class="btn btn-success">Comprar</button>
+    </div>
     <div class="container" id="containerItemsInfoProduct">
     </div>
-    <div id="carouselExample" class="carousel slide">
+    <div class="col-lg-12 col-md-12 mb-1">
+    <div id="carouselExample" class="carousel slide mx-auto">
       <div id="carrusel" class="carousel-inner">
-     
+
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,44 +71,45 @@
     </div>
 
     <div id="containerItemsInfo"></div>
-    
-      <div id="comentarioInput">
-        <h1 id="h1">¡Deja tu comentario!</h1>
-        <div class="form-floating" id="textarea">
-         
-          <textarea class="form-control" placeholder="Escribe aquí tu comentario" id="floatingTextarea2" style="height: 100px; width: 90%;"></textarea>
-          <label for="floatingTextarea2">Escribe aquí tu comentario</label>
-        </div>
-        <div id="puntajeInput">
-          <select required id="select" name="puntajes">
-            <option value="" selected disabled>Califica el producto</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-        <div id="button">
-          <button id="enviar" type="submit">Enviar</button>
-        </div>
+
+    <div id="comentarioInput">
+      <h1 id="h1">¡Deja tu comentario!</h1>
+      <div class="form-floating" id="textarea">
+
+        <textarea class="form-control" placeholder="Escribe aquí tu comentario" id="floatingTextarea2"
+          style="height: 100px; width: 90%;"></textarea>
+        <label for="floatingTextarea2">Escribe aquí tu comentario</label>
       </div>
-
-      
-
-
+      <div id="puntajeInput">
+        <select required id="select" name="puntajes">
+          <option value="" selected disabled>Califica el producto</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div id="button">
+        <button id="enviar" type="submit">Enviar</button>
+      </div>
+    </div>
   </main>
   <hr><br><br>
   <h4 class="text-center">Productos relacionados</h4><br>
-  <div id="centrarRelated"><div id="productsRelated">
-  </div></div>
-  
+  <div class="container-fluid" id="centrarRelated">   <!--Container-fluid agregado por Rodrigo ;D -->
+    <div class="row" id="productsRelated">   <!--row agregado por Rodrigo ;D -->
+    </div>
+  </div>
+  <div id="productsRelated">
+  </div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
   <div id="spinner-wrapper">
@@ -114,10 +120,13 @@
       <div></div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
   <script src="js/products.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

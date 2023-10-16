@@ -325,18 +325,18 @@ margin-bottom: 2%;
 .carousel-inner{
 display: flex;
 align-items: center;
-width: 70%; 
-max-height: 100%; 
+max-height: 50%; 
 height: auto;
 text-align: center;
-margin-left: 70px;
-
+max-width: 70%;
+max-height: 50vh;
+margin: 0 auto;
   
 }
 #carouselExample{
-max-width: 50%; 
-margin: 0; 
-display:grid;
+max-width: 80%; 
+margin: 0 auto; 
+display:block;
 place-items: center;
 margin-left: 400px;
     
@@ -350,9 +350,103 @@ margin-left: 400px;
 .carousel-control-prev-icon{
   background-color: grey;
 }
+
 #centrarRelated{
   display: grid;
   place-items: center;
 }
 
+#formenvio{
+  margin-left: 100px;
+}
 
+.navbar-nav {         /* codigo para centrar el navbar */ 
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {       /* codigo para centrar el navbar*/
+  flex: 1;
+}
+
+
+@media (max-width: 900px) {           /* Formato para texto en resposive desing para tamaños menores a 900px */
+  .text-muted {         
+    font-size: 1.25vw;
+   }
+  h4,.btn {
+    font-size: 3vw;
+  }
+  #rangeFilterCount,#clearRangeFilter,.form-control,#categoryName,#productSearch,.col {
+    font-size: 2vw;
+  }
+  h1,h2 {
+    font-size: 8vw;
+    }
+  .lead {
+    font-size: 4vw;
+  }
+  #coment {
+    font-size: 2.5vw;
+  }
+  #containerItemsInfoProduct h4 {
+    font-size: 4vw;
+  }
+  #containerItemsInfoProduct .mb-1 {
+    font-size: 2.75vw;
+  }
+  #comentarioInput #h1 {
+    font-size: 4.5vw;
+  }
+  #escritura_de_comentario {
+    font-size: 100vw;
+  }
+  #productsRelated .card-body .card-title {
+    font-size: 2vw;
+    }
+}
+
+@media (min-width: 901px) {             /* Formato para texto en resposive desing para tamaño mayor a 900px */
+  .text-muted {         
+    font-size: 1.7vh;
+  }
+  h4 {
+    font-size: 3.5vh;
+  }
+  #productSearch, .btn {
+    font-size: 2vh;
+  }
+  #categoryName {
+    font-size: 1000vh;
+  }
+  #rangeFilterCount,#clearRangeFilter,.col, .form-control {
+    font-size: 2.2vh;
+  }
+  h1,h2 {
+    font-size: 7vh;
+  }
+  .lead {
+    font-size: 3vh;
+  }
+  #coment {
+    font-size: 1.75vh;
+  }
+  #containerItemsInfoProduct h4 {
+    font-size: 3vh;
+  }
+  #containerItemsInfoProduct .mb-1 {
+    font-size: 1.75vh;
+  }
+  #comentarioInput #h1 {
+    font-size: 4vh;
+  }
+  #escritura_de_comentario {
+    font-size: 1vh;
+  }
+  #productsRelated .card-body .card-title {
+  font-size: 2vh;
+  }
+}
+.nav-item , .navbar-brand{
+  margin-right: 50px;
+}

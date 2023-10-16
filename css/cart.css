@@ -1,0 +1,51 @@
+
+    #tablaCarrito {
+        border-collapse: collapse; 
+        width: 100%; /* Ancho de la tabla */
+      }
+      
+      #tablaCarrito img {
+        width: 70px; /* Tamaño imagen */
+        vertical-align: middle;
+      }
+      
+      #tablaCarrito td {
+        padding: 12px; /* Espacio interno en las celdas */
+        text-align: center; 
+      }
+      
+      #tablaCarrito th {
+        text-align: center; 
+      }
+      
+      /* Agregar espacio entre filas si es necesario */
+      #tablaCarrito tbody tr {
+        margin-bottom: 10px; /* Espacio entre filas */
+      }
+
+    #inputCart{
+        text-align: center;
+    }
+
+    #formEnvio{
+      display: flex;
+      place-content: center;
+      align-items: center;
+    }
+
+    #h4form{
+     margin-top: 2%;
+    }
+
+ #btnEnviar{
+  color: #fff;
+  background-color: rgb(247, 130, 28);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  border:none;
+  width: 100px; 
+  height: 50px; 
+  padding: 10px 20px;
+  font-size: 20px; 
+ }
+ 
